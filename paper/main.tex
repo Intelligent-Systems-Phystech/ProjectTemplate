@@ -1,18 +1,15 @@
 \documentclass{article}
-
-
-
 \usepackage{arxiv}
 
-\usepackage[utf8]{inputenc} % allow utf-8 input
-\usepackage[T1]{fontenc}    % use 8-bit T1 fonts
-\usepackage{hyperref}       % hyperlinks
-\usepackage{url}            % simple URL typesetting
-\usepackage{booktabs}       % professional-quality tables
-\usepackage{amsfonts}       % blackboard math symbols
-\usepackage{nicefrac}       % compact symbols for 1/2, etc.
-\usepackage{microtype}      % microtypography
-\usepackage{lipsum}		% Can be removed after putting your text content
+\usepackage[utf8]{inputenc}
+\usepackage[english, russian]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{amsfonts}
+\usepackage{nicefrac}
+\usepackage{microtype}
+\usepackage{lipsum}
 \usepackage{graphicx}
 \usepackage{natbib}
 \usepackage{doi}
@@ -20,9 +17,6 @@
 
 
 \title{A template for the \emph{arxiv} style}
-
-%\date{September 9, 1985}	% Here you can change the date presented in the paper title
-%\date{} 					% Or removing it
 
 \author{ David S.~Hippocampus\thanks{Use footnote for providing further
 		information about author (webpage, alternative
@@ -54,13 +48,8 @@
 	%% Address \\
 	%% \texttt{email} \\
 }
+\date{}
 
-% Uncomment to remove the date
-%\date{}
-
-% Uncomment to override  the `A preprint' in the header
-%\renewcommand{\headeright}{Technical Report}
-%\renewcommand{\undertitle}{Technical Report}
 \renewcommand{\shorttitle}{\textit{arXiv} Template}
 
 %%% Add PDF metadata to help others organize their library
@@ -81,14 +70,11 @@ pdfkeywords={First keyword, Second keyword, More},
 \end{abstract}
 
 
-% keywords can be removed
 \keywords{First keyword \and Second keyword \and More}
-
 
 \section{Introduction}
 \lipsum[2]
 \lipsum[3]
-
 
 \section{Headings: first level}
 \label{sec:headings}
@@ -127,7 +113,7 @@ See Figure \ref{fig:fig1}. Here is how you add footnotes. \footnote{Sample of th
 
 \begin{figure}
 	\centering
-	\fbox{\rule[-.5cm]{4cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+	\includegraphics[width=0.5\textwidth]{../figures/log_reg_cs_exp.eps}
 	\caption{Sample figure caption.}
 	\label{fig:fig1}
 \end{figure}
@@ -167,32 +153,6 @@ The documentation for \verb+booktabs+ (`Publication quality tables in LaTeX') is
 
 
 \bibliographystyle{unsrtnat}
-\bibliography{references}  %%% Uncomment this line and comment out the ``thebibliography'' section below to use the external .bib file (using bibtex) .
-
-
-%%% Uncomment this section and comment out the \bibliography{references} line above to use inline references.
-% \begin{thebibliography}{1}
-
-% 	\bibitem{kour2014real}
-% 	George Kour and Raid Saabne.
-% 	\newblock Real-time segmentation of on-line handwritten arabic script.
-% 	\newblock In {\em Frontiers in Handwriting Recognition (ICFHR), 2014 14th
-% 			International Conference on}, pages 417--422. IEEE, 2014.
-
-% 	\bibitem{kour2014fast}
-% 	George Kour and Raid Saabne.
-% 	\newblock Fast classification of handwritten on-line arabic characters.
-% 	\newblock In {\em Soft Computing and Pattern Recognition (SoCPaR), 2014 6th
-% 			International Conference of}, pages 312--318. IEEE, 2014.
-
-% 	\bibitem{hadash2018estimate}
-% 	Guy Hadash, Einat Kermany, Boaz Carmeli, Ofer Lavi, George Kour, and Alon
-% 	Jacovi.
-% 	\newblock Estimate and replace: A novel approach to integrating deep neural
-% 	networks with existing applications.
-% 	\newblock {\em arXiv preprint arXiv:1804.09028}, 2018.
-
-% \end{thebibliography}
-
+\bibliography{references}
 
 \end{document}
