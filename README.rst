@@ -5,7 +5,7 @@
     :alt: Test status
     
 .. |codecov| image:: https://img.shields.io/codecov/c/github/Intelligent-Systems-Phystech/ProjectTemplate/master
-    :target: https://github.com/andriygav/MixtureLib/tree/master
+    :target: https://app.codecov.io/gh/Intelligent-Systems-Phystech/ProjectTemplate
     :alt: Test coverage
     
 .. |docs| image:: https://github.com/Intelligent-Systems-Phystech/ProjectTemplate/workflows/docs/badge.svg
