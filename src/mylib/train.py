@@ -71,13 +71,13 @@ class Trainer(object):
         '''
         self.model.fit(self.X_train, self.Y_train)
 
-    def eval(self):
+    def eval(self, output_dict=False):
         r'''Evaluate model for initial validadtion dataset.
         '''
         return classification_report(
             self.Y_val, 
             self.model.predict(
-                self.X_val))
+                self.X_val), output_dict=output_dict)
 
     def test(self, X, Y, output_dict=False):
         r"""Evaluate model for given dataset.
@@ -90,7 +90,7 @@ class Trainer(object):
         :type Y: numpy.array
         """
         return classification_report(
-            X, self.model.predict(Y))
+            X, self.model.predict(Y), output_dict=output_dict)
 
 
 def cv_parameters(X, Y, seed=42, minimal=0.1, maximum=25, count=100):
