@@ -52,9 +52,9 @@ class Trainer:
         r'''Evaluate model for initial validadtion dataset.
         '''
         return classification_report(
-            self.X_val, 
+            self.Y_val, 
             self.model.predict(
-                self.Y_val))
+                self.X_val))
 
     def test(self, X, Y):
         r"""Evaluate model for given dataset.
