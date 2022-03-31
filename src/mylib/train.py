@@ -18,7 +18,7 @@ from sklearn.metrics import classification_report
 
 class Trainer:
     r'''Base class for all trainer.'''
-    def __init__(self, model, X_train, Y_train, X_val, Y_val):
+    def __init__(self, model, X, Y):
         r'''Constructor method
 
         :param model: The class with fit and predict methods.
@@ -38,10 +38,12 @@ class Trainer:
         :type Y_val: numpy.array
         '''
         self.model = model
-        self.X_train = X_train
-        self.Y_train = Y_train
-        self.X_val = X_val
-        self.Y_val = Y_val
+        (
+            self.X_train, 
+            self.X_val, 
+            self.Y_train, 
+            self.Y_val
+        ) = train_test_split(X, Y)
 
     def train(self):
         r''' Train model
