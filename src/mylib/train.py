@@ -70,7 +70,7 @@ class Trainer:
             X, self.model.predict(Y))
 
 
-def cv_parameters(X, Y, seed):
+def cv_parameters(X, Y, seed=42):
     r'''Function for the experiment
 
     :param X: The array of shape 
