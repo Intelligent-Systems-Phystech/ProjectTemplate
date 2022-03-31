@@ -171,7 +171,7 @@
 <span class="sd">        :type Y: numpy.array</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">classification_report</span><span class="p">(</span>
-            <span class="n">X</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">Y</span><span class="p">),</span> <span class="n">output_dict</span><span class="o">=</span><span class="n">output_dict</span><span class="p">)</span></div></div>
+            <span class="n">Y</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">model</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span><span class="p">),</span> <span class="n">output_dict</span><span class="o">=</span><span class="n">output_dict</span><span class="p">)</span></div></div>
 
 
 <div class="viewcode-block" id="cv_parameters"><a class="viewcode-back" href="../../train.html#mylib.train.cv_parameters">[docs]</a><span class="k">def</span> <span class="nf">cv_parameters</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">minimal</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
