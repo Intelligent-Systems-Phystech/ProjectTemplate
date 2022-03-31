@@ -91,7 +91,7 @@ class Trainer(object):
             X, self.model.predict(Y))
 
 
-def cv_parameters(X, Y, seed=42):
+def cv_parameters(X, Y, seed=42, minimal=0.1, maximum=50, count=100):
     r'''Function for the experiment
 
     :param X: The array of shape 
@@ -103,6 +103,12 @@ def cv_parameters(X, Y, seed=42):
 
     :param seed: Seed for random state.
     :type seed: int
+    :param minimal: Minimum value for the Cs linspace.
+    :type minimal: int
+    :param maximum: Maximum value for the Cs linspace.
+    :type maximum: int
+    :param count: Number of the Cs points.
+    :type count: int
     '''
     (
         X_train, 
@@ -111,7 +117,7 @@ def cv_parameters(X, Y, seed=42):
         Y_val
     ) = train_test_split(X, Y, random_state=seed)
 
-    Cs = numpy.linspace(0.1, 200, 100)
+    Cs = numpy.linspace(minimal, maximum, count)
     parameters = []
     accuracy = []
     for C in Cs:
