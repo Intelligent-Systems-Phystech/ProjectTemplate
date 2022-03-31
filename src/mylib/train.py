@@ -29,7 +29,7 @@ class SyntheticBernuliDataset(object):
         :param seed: seed for random state.
         :type seed: int
         '''
-        rs = np.random.RandomState(seed)
+        rs = numpy.random.RandomState(seed)
 
         self.w = rs.randn(n) # Генерим вектор параметров из нормального распределения
         self.X = rs.randn(m, n) # Генерим вектора признаков из нормального распределения
