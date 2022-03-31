@@ -36,4 +36,5 @@ Presentations at conferences on the topic of research
 
 Software modules developed as part of the study
 ======================================================
-1. src/mylib
+1. A python package *mylib* with all implementation `here <https://github.com/Intelligent-Systems-Phystech/ProjectTemplate/src>`_.
+2. A code with all experiment visualisation `here <https://github.com/Intelligent-Systems-Phystech/ProjectTemplate/code/main.ipynb>`_.
