@@ -21,6 +21,10 @@ def test_trainer():
     
     assert trainer.eval(output_dict=True)['accuracy'] == 0.96
 
+    assert trainer.test(
+        trainer.X_val, trainer.Y_val,output_dict=True
+        )['accuracy'] == 0.96
+
 def test_cv():
     dataset = SyntheticBernuliDataset(n=10, m=100, seed=42)
 
