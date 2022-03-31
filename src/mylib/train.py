@@ -90,7 +90,7 @@ class Trainer(object):
         :type Y: numpy.array
         """
         return classification_report(
-            X, self.model.predict(Y), output_dict=output_dict)
+            Y, self.model.predict(X), output_dict=output_dict)
 
 
 def cv_parameters(X, Y, seed=42, minimal=0.1, maximum=25, count=100):
