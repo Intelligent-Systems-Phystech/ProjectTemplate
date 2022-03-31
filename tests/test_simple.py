@@ -10,6 +10,15 @@ def test_dataset():
 
     assert len(dataset.X) == len(dataset.y)
 
+def test_trainer():
+    trainer = Trainer(
+        LogisticRegression(penalty='l1', solver='saga', C=1.0),
+        dataset.X, dataset.y,
+    )
+
+    trainer.train()
+    assert trainer.eval(output_dict=True)['accuracy'] == 0.96
+
 def test_cv():
     Cs, accuracy, parameters = cv_parameters(dataset.X, dataset.y)
 
