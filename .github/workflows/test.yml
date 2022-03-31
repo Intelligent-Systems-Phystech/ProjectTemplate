@@ -28,3 +28,12 @@ jobs:
       - name: Testing
         run: |
           PYTHONPATH=src/ pytest tests/ --cov=src/mylib --cov-report=xml
+          
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v1  
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          file: ./coverage.xml
+          flags: unittests
+          name: codecov-projecttemplate
+          fail_ci_if_error: true
