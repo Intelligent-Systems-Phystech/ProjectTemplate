@@ -12,11 +12,32 @@ from __future__ import print_function
 __docformat__ = 'restructuredtext'
 
 import numpy
+from scipy.special import expit
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
 from sklearn.metrics import classification_report
 
-class Trainer:
+class SyntheticBernuliDataset(object):
+    r'''Base class for synthetic dataset.'''
+    def __init__(self, n=10, m=100, seed=42):
+        r'''Constructor method
+
+        :param n: the number of feature
+        :type n: int
+        :param m: the number of object
+        :type m: int
+        :param seed: seed for random state.
+        :type seed: int
+        '''
+        rs = np.random.RandomState(seed)
+
+        self.w = rs.randn(n) # Генерим вектор параметров из нормального распределения
+        self.X = rs.randn(m, n) # Генерим вектора признаков из нормального распределения
+
+        self.y = rs.binomial(1, expit(self.X@self.w)) # Гипотеза порождения данных - целевая переменная из схемы Бернули
+
+
+class Trainer(object):
     r'''Base class for all trainer.'''
     def __init__(self, model, X, Y, seed=42):
         r'''Constructor method
