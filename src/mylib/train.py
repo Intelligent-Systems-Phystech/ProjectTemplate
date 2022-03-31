@@ -88,7 +88,7 @@ def cv_parameters(X, Y, seed=42):
         X_val, 
         Y_train, 
         Y_val
-    ) = train_test_split(X, Y, random_state=self.seed)
+    ) = train_test_split(X, Y, random_state=seed)
 
     Cs = numpy.linspace(0.1, 200, 100)
     parameters = []
