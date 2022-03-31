@@ -18,32 +18,30 @@ from sklearn.metrics import classification_report
 
 class Trainer:
     r'''Base class for all trainer.'''
-    def __init__(self, model, X, Y):
+    def __init__(self, model, X, Y, seed=42):
         r'''Constructor method
 
         :param model: The class with fit and predict methods.
         :type model: object
 
-        :param X_train: The array of shape 
+        :param X: The array of shape 
             `num_elements` :math:`\times` `num_feature`.
-        :type X_train: numpy.array
-        :param Y_train: The array of shape 
+        :type X: numpy.array
+        :param Y: The array of shape 
             `num_elements` :math:`\times` `num_answers`.
-        :type Y_train: numpy.array
-        :param X_val: The array of shape 
-            `num_elements` :math:`\times` `num_feature`.
-        :type X_val: numpy.array
-        :param Y_val: The array of shape 
-            `num_elements` :math:`\times` `num_answers`.
-        :type Y_val: numpy.array
+        :type Y: numpy.array
+
+        :param seed: Seed for random state.
+        :type seed: int
         '''
         self.model = model
+        self.seed = seed
         (
             self.X_train, 
             self.X_val, 
             self.Y_train, 
             self.Y_val
-        ) = train_test_split(X, Y)
+        ) = train_test_split(X, Y, random_state=self.seed)
 
     def train(self):
         r''' Train model
@@ -72,9 +70,26 @@ class Trainer:
             X, self.model.predict(Y))
 
 
-def cv_parameters(X_train, Y_train, X_val, Y_val):
+def cv_parameters(X, Y, seed):
     r'''Function for the experiment
+
+    :param X: The array of shape 
+        `num_elements` :math:`\times` `num_feature`.
+    :type X: numpy.array
+    :param Y: The array of shape 
+        `num_elements` :math:`\times` `num_answers`.
+    :type Y: numpy.array
+
+    :param seed: Seed for random state.
+    :type seed: int
     '''
+    (
+        X_train, 
+        X_val, 
+        Y_train, 
+        Y_val
+    ) = train_test_split(X, Y, random_state=self.seed)
+
     Cs = numpy.linspace(0.1, 200, 100)
     parameters = []
     accuracy = []
@@ -84,9 +99,9 @@ def cv_parameters(X_train, Y_train, X_val, Y_val):
 
         accuracy.append(
             classification_report(
-                X_val, 
+                Y_val, 
                 model.predict(
-                    Y_val), 
+                    X_val), 
                 output_dict=True)['accuracy']
         )
         
