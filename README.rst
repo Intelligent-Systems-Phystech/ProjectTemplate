@@ -1,8 +1,12 @@
-|test|
+|test| |docs|
 
 .. |test| image:: https://github.com/Intelligent-Systems-Phystech/ProjectTemplate/workflows/test/badge.svg
     :target: https://github.com/Intelligent-Systems-Phystech/ProjectTemplate/tree/master
     :alt: Test status
+    
+.. |docs| image:: https://github.com/Intelligent-Systems-Phystech/ProjectTemplate/workflows/docs/badge.svg
+    :target: https://github.com/Intelligent-Systems-Phystech/ProjectTemplate/
+    :alt: Build status
 
 
 .. class:: center
