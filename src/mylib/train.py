@@ -94,7 +94,8 @@ class Trainer(object):
 
 
 def cv_parameters(X, Y, seed=42, minimal=0.1, maximum=25, count=100):
-    r'''Function for the experiment
+    r'''Function for the experiment with different regularisation parameters 
+        and return accuracy and weidth for LogisticRegression for each parameter.
 
     :param X: The array of shape 
         `num_elements` :math:`\times` `num_feature`.
@@ -112,20 +113,11 @@ def cv_parameters(X, Y, seed=42, minimal=0.1, maximum=25, count=100):
     :param count: Number of the Cs points.
     :type count: int
     '''
-    # (
-    #     X_train, 
-    #     X_val, 
-    #     Y_train, 
-    #     Y_val
-    # ) = train_test_split(X, Y, random_state=seed)
 
     Cs = numpy.linspace(minimal, maximum, count)
     parameters = []
     accuracy = []
     for C in Cs:
-        # model = LogisticRegression(penalty='l1', solver='saga', C=1/C)
-        # model.fit(X_train, Y_train)
-
         trainer = Trainer(
             LogisticRegression(penalty='l1', solver='saga', C=1/C),
             X, Y,
