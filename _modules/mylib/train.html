@@ -175,7 +175,8 @@
 
 
 <div class="viewcode-block" id="cv_parameters"><a class="viewcode-back" href="../../train.html#mylib.train.cv_parameters">[docs]</a><span class="k">def</span> <span class="nf">cv_parameters</span><span class="p">(</span><span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span> <span class="n">seed</span><span class="o">=</span><span class="mi">42</span><span class="p">,</span> <span class="n">minimal</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">maximum</span><span class="o">=</span><span class="mi">25</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">100</span><span class="p">):</span>
-    <span class="sa">r</span><span class="sd">&#39;&#39;&#39;Function for the experiment</span>
+    <span class="sa">r</span><span class="sd">&#39;&#39;&#39;Function for the experiment with different regularisation parameters </span>
+<span class="sd">        and return accuracy and weidth for LogisticRegression for each parameter.</span>
 
 <span class="sd">    :param X: The array of shape </span>
 <span class="sd">        `num_elements` :math:`\times` `num_feature`.</span>
@@ -193,20 +194,11 @@
 <span class="sd">    :param count: Number of the Cs points.</span>
 <span class="sd">    :type count: int</span>
 <span class="sd">    &#39;&#39;&#39;</span>
-    <span class="c1"># (</span>
-    <span class="c1">#     X_train, </span>
-    <span class="c1">#     X_val, </span>
-    <span class="c1">#     Y_train, </span>
-    <span class="c1">#     Y_val</span>
-    <span class="c1"># ) = train_test_split(X, Y, random_state=seed)</span>
 
     <span class="n">Cs</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">minimal</span><span class="p">,</span> <span class="n">maximum</span><span class="p">,</span> <span class="n">count</span><span class="p">)</span>
     <span class="n">parameters</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">accuracy</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">C</span> <span class="ow">in</span> <span class="n">Cs</span><span class="p">:</span>
-        <span class="c1"># model = LogisticRegression(penalty=&#39;l1&#39;, solver=&#39;saga&#39;, C=1/C)</span>
-        <span class="c1"># model.fit(X_train, Y_train)</span>
-
         <span class="n">trainer</span> <span class="o">=</span> <span class="n">Trainer</span><span class="p">(</span>
             <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">penalty</span><span class="o">=</span><span class="s1">&#39;l1&#39;</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s1">&#39;saga&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">1</span><span class="o">/</span><span class="n">C</span><span class="p">),</span>
             <span class="n">X</span><span class="p">,</span> <span class="n">Y</span><span class="p">,</span>
