@@ -91,7 +91,7 @@ class Trainer(object):
             X, self.model.predict(Y))
 
 
-def cv_parameters(X, Y, seed=42, minimal=0.1, maximum=50, count=100):
+def cv_parameters(X, Y, seed=42, minimal=0.1, maximum=25, count=100):
     r'''Function for the experiment
 
     :param X: The array of shape 
