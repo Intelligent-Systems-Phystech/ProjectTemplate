@@ -107,4 +107,4 @@ def cv_parameters(X, Y, seed):
         
         parameters.extend(model.coef_)
 
-    return accuracy, parameters
+    return Cs, accuracy, parameters
