@@ -1,4 +1,3 @@
-import mylib
 from mylib.train import cv_parameters, Trainer, SyntheticBernuliDataset
 from sklearn.linear_model import LogisticRegression
 
