@@ -1,12 +1,14 @@
-#!/usr/bin/env python
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
+'''
 The :mod:`mylib.train` contains classes:
+
 - :class:`mylib.train.Trainer`
 
 The :mod:`mylib.train` contains functions:
+
 - :func:`mylib.train.cv_parameters`
-"""
+'''
 from __future__ import print_function
 
 __docformat__ = 'restructuredtext'
